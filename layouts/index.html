@@ -1,0 +1,51 @@
+{{ define "main" }}
+  <section class="hero">
+    <div class="terminal-window">
+      <div class="terminal-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="win-title">{{ .Site.Params.username | default "ali" }}@{{ .Site.Params.hostname | default "manjaro" }}: ~ — bash</span>
+      </div>
+      <div class="terminal-body">
+        <div class="prompt-line">
+          <span class="prompt-user">{{ .Site.Params.username | default "ali" }}</span><span class="prompt-at">@</span><span class="prompt-host">{{ .Site.Params.hostname | default "manjaro" }}</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+          cat README.md
+        </div>
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-head">
+      <h2>ls projects/</h2>
+      <a class="more" href="{{ "/projects" | relURL }}">ls -la &rarr;</a>
+    </div>
+    <ul class="card-list">
+      {{ range first 3 (where .Site.RegularPages "Type" "projects") }}
+        <li class="card">
+          <a href="{{ .RelPermalink }}"><h3>{{ .Title }}</h3></a>
+          <p>{{ .Summary }}</p>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{/* v2: uncomment to show recent notes on the home page
+  <section class="home-section">
+    <div class="section-head">
+      <h2>tail -n 5 notes/</h2>
+      <a class="more" href="{{ "/notes" | relURL }}">less notes/ &rarr;</a>
+    </div>
+    <ul class="post-list">
+      {{ range first 5 (where .Site.RegularPages "Type" "notes") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  */}}
+{{ end }}

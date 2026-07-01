@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="header-top">
+      <pre class="ascii-banner" aria-hidden="true">{{ .Site.Params.asciiBanner }}</pre>
+    </div>
+
+    <div class="prompt-line">
+      <span class="prompt-user">{{ .Site.Params.username | default "ali" }}</span><span class="prompt-at">@</span><span class="prompt-host">{{ .Site.Params.hostname | default "manjaro" }}</span><span class="prompt-colon">:</span><span class="prompt-path">~/{{ if .IsHome }}{{ else }}{{ .Section | default "site" }}{{ end }}</span><span class="prompt-dollar">$</span>
+      <a class="brand cursor-blink" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+    </div>
+
+    <nav class="nav" aria-label="Main">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .PageRef | relURL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}><span class="cmd">cd</span> <span class="arg">~/{{ lower .Name }}</span></a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,54 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "ali@home"
+enableRobotsTXT = true
+
+# Generate a clean URL structure
+[permalinks]
+  notes = "/notes/:slug/"
+  projects = "/projects/:slug/"
+
+[params]
+  author = "Ali"
+  username = "0xroot"
+  hostname = "null"
+  kernel = "7.x"
+  description = "Projects, resume, and a terminal-themed home on the web."
+  asciiBanner = """
+    .--.
+   |o_o |
+   |:_/ |
+  //   \\ \\
+ (|     | )
+/'\\_   _/\\`\\
+\\___)=(___/"""
+  # Update these with your real handles (leave empty to hide)
+  github = "https://github.com/root-ali"
+  email = "soltaniam@hotmail.com"
+  resumePdf = "/resume.pdf"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 2
+  # v2: uncomment to add Notes back to the nav
+  # [[menu.main]]
+  #   name = "Notes"
+  #   pageRef = "/notes"
+  #   weight = 3
+  [[menu.main]]
+    name = "Resume"
+    pageRef = "/resume"
+    weight = 3
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+  [markup.goldmark.renderer]
+    unsafe = true

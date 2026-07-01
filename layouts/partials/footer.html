@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="footer-prompt">
+      <span class="ok">exit 0</span> · hugo {{ hugo.Version }} · kernel {{ .Site.Params.kernel | default "6.x" }} · &copy; {{ now.Year }} {{ .Site.Params.author }}
+    </span>
+    <span class="footer-links">
+      {{ with .Site.Params.github }}<a href="{{ . }}" rel="me noopener" target="_blank">github</a>{{ end }}
+      {{ with .Site.Params.email }}<a href="mailto:{{ . }}">mail</a>{{ end }}
+    </span>
+  </div>
+</footer>
