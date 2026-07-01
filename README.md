@@ -7,7 +7,7 @@ Platform engineer by trade — Kubernetes, observability, distributed databases,
 ### `$PATH`
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=linux,go,k8s,docker,postgres,cockroachdb,ansible,gitlab,pulumi,terraform,bash,prometheus,grafana,redis,helm,python,git&perline=8" alt="linux, go, kubernetes, docker, postgres, cockroachdb, ansible, gitlab, pulumi, terraform, bash, prometheus, grafana, redis, helm, python, git" />
+  <img src="https://skillicons.dev/icons?i=linux,go,k8s,docker,postgres,ansible,gitlab,terraform,bash,prometheus,grafana,git&perline=8" alt="linux, go, kubernetes, docker, postgres, ansible, gitlab, terraform, bash, prometheus, grafana, git" />
 </p>
 
 ### `~/bin`
